@@ -8,7 +8,7 @@
     text-decoration: none;
     outline: none;
     border: none;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     transition: all .2s linear;
 }
 
@@ -243,6 +243,7 @@ section {
 .features .box-container .box.second {
     display: flex;
     flex-flow: column-reverse;
+    
 }
 
 .features .box-container .box:hover .image img {
@@ -252,6 +253,7 @@ section {
     height: 30rem;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .features .box-container .box .image img {
@@ -324,6 +326,17 @@ section {
     font-size: 2.5rem;
     margin: 1rem 0;
     color: #fff;
+}
+.pricing .information span {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: #fff;
+}
+
+.pricing .information .price {
+    font-size: 5rem;
+    font-weight: bolder;
+    color: rgb(5, 238, 21);
 }
 
 .pricing .plan .price {
@@ -408,9 +421,66 @@ section {
 .trainers .box-container .box .content .share a:hover {
     color: rgb(5, 238, 21);
 }
+
+.FAQ {
+    /* display: flex; */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: #fff;
+    font-size: medium;
+}
+.accordion {
+    flex: 1 1 40rem;
+    background: #111;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.accordion-title {
+    display: flex;
+    justify-content: space-between; /* espaço entre o título e o ícone */
+    align-items: center; /* alinha verticalmente */
+    cursor: pointer; /* muda o cursor ao passar o mouse */
+    padding: 10px;
+    background: transparent;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: rgb(5, 238, 21);
+}
+.accordion .accordion-header {
+    padding: 1.5rem 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion .accordion-header.active {
+    background: rgb(5, 238, 21);
+}
+.accordion .accordion-header.active h3 {
+    color: #fff;
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion.active .accordion-content {
+    max-height: 200px; /* ajuste conforme o tamanho do conteúdo */
+}
+.accordion .fa-angle-down {
+    transition: transform 0.3s ease;
+}
+
+.accordion.active .fa-angle-down {
+    transform: rotate(180deg);
+}
+
 .banner {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-    url(img/FITNESS\ CENTER\ _\ GYM.jpeg) no-repeat;
+    url(img/alunosgeral.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -631,6 +701,23 @@ section {
     color: #fff;
     text-transform: none;
 }
+
+.footer .box-container .box form button {
+    background: rgb(5, 238, 21);
+    color: #000;
+    padding: 1.2rem 2rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.footer .box-container .box form button:hover {
+    background: rgb(238, 21, 5);
+    color: #fff;
+}
+
+
 /*Responsividade*/
 @media (max-width: 991px) {
     html {
@@ -709,4 +796,106 @@ section {
     html {
         font-size: 50%;
     }
+}
+/* Galeria de Imagens */
+.gallery .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.gallery .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery .swiper-slide img {
+    width: 100%;
+    height: 200px; /* or adjust as needed */
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin: 0;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.gallery .swiper-slide img:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 11000; 
+    padding-top: 60px; 
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9);
+    text-align: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 30px;
+    padding: 100px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Formulário de Contato */
+.btn-enviar {
+    background-color: #f00;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #c00;
+}
+
+/*impedir rolagem do body quando o modal está aberto*/
+.modal-open {
+    overflow: hidden;
 }
