@@ -132,3 +132,21 @@ document.addEventListener("wheel", function(event) {
         event.preventDefault();
     }
 }, { passive: false });
+
+
+//Mensagem de envio bem sucedido
+document.querySelector('.footer form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const msg = document.getElementById('mensagem-sucesso');
+    msg.textContent = 'Enviada com sucesso';
+    msg.style.display = 'block';
+    msg.style.opacity = '1';
+    setTimeout(() => {
+        msg.style.transition = 'opacity 1s';
+        msg.style.opacity = '0';
+        setTimeout(() => {
+            msg.style.display = 'none';
+            msg.style.transition = '';
+        }, 1000);
+    }, 2000);
+});

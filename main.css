@@ -344,6 +344,12 @@ section {
     font-weight: bolder;
     color: rgb(5, 238, 21);
 }
+.pricing .plan .price,
+.pricing .information .price {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
 
 .pricing .plan .price span {
     color: #fff;
@@ -514,6 +520,7 @@ section {
 
 .review .information {
     flex: 1 1 35rem;
+    
 }
 .review .information span {
     font-size: 2rem;
@@ -899,3 +906,11 @@ section {
 .modal-open {
     overflow: hidden;
 }
+
+
+    .email {
+        border: 1px solid rgb(5, 238, 21);
+        padding: 8px;
+        border-radius: 4px; /* opcional, para deixar a borda mais arredondada */
+    }
+
