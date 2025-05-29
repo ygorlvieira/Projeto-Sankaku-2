@@ -69,7 +69,7 @@ var swiper = new Swiper(".blogs-slider", {
     },
 });
 
-// Accordion functionality
+// Accordion
     const accordions = document.querySelectorAll('.accordion-title');
 
     accordions.forEach(item => {
@@ -80,7 +80,7 @@ var swiper = new Swiper(".blogs-slider", {
     });
 
 
-    //Modal functionality
+    //Modal
 
  
     const modal = document.getElementById("modal");
